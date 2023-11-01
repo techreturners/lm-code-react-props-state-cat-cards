@@ -85,7 +85,9 @@ function App(): JSX.Element {
 
 	 console.log("Our pretties 😻: ", cats)
 
-	return (<div>{cats.map((cat, index) => (
+	return (
+	<header>{Header}</header>
+	<div>{cats.map((cat, index) => (
 		<CatCard
 		name = {cat.name}
 		species = {cat.species}
