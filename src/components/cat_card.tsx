@@ -14,6 +14,7 @@ import CatImage from './cat_image';
 
 export const images = [
 	{
+        id: '',
 		image: cat1,
 		altText: 'Describe this cat!',
 		licenceType: 'CC BY-SA 2.0',
@@ -22,6 +23,7 @@ export const images = [
 		attributionUrl: 'https://www.flickr.com/people/amblin/'
 	},
 	{
+        id: '',
 		image: cat2,
 		altText: 'Describe this cat!',
 		licenceType: 'CC BY-SA 2.0',
@@ -30,6 +32,7 @@ export const images = [
 		attributionUrl: 'https://www.flickr.com/people/ivva/'
 	},
 	{
+        id: '',
 		image: cat3,
 		altText: 'Describe this cat!',
 		licenceType: 'CC BY-ND 2.0',
@@ -38,6 +41,7 @@ export const images = [
 		attributionUrl: 'https://www.flickr.com/people/rachephotos/'
 	},
 	{
+        id: '',
 		image: cat4,
 		altText: 'Describe this cat!',
 		licenceType: 'CC BY 2.0',
@@ -46,6 +50,7 @@ export const images = [
 		attributionUrl: 'https://www.flickr.com/people/renarl/'
 	},
 	{
+        id: '',
 		image: cat5,
 		altText: 'Describe this cat!',
 		licenceType: 'CC BY-SA 2.0',
@@ -54,6 +59,7 @@ export const images = [
 		attributionUrl: 'https://www.flickr.com/people/x-oph/'
 	},
 	{
+        id: '',
 		image: cat6,
 		altText: 'Describe this cat!',
 		licenceType: 'CC BY-ND 2.0',
@@ -62,6 +68,7 @@ export const images = [
 		attributionUrl: 'https://www.flickr.com/people/21851382@N04/'
 	},
 	{
+        id: '',
 		image: cat7,
 		altText: 'Describe this cat!',
 		licenceType: 'CC BY 2.0',
@@ -70,6 +77,7 @@ export const images = [
 		attributionUrl: 'https://www.flickr.com/people/pavlovskyy/'
 	},
 	{
+        id: '',
 		image: cat8,
 		altText: 'Describe this cat!',
 		licenceType: 'CC BY 2.0',
@@ -78,6 +86,7 @@ export const images = [
 		attributionUrl: 'https://www.flickr.com/people/darthale/'
 	},
 	{
+        id: '',
 		image: cat9,
 		altText: 'Describe this cat!',
 		licenceType: 'CC BY 2.0',
@@ -86,6 +95,7 @@ export const images = [
 		attributionUrl: 'https://www.flickr.com/people/24039825@N06/'
 	},
 	{
+        id: '',
 		image: cat10,
 		altText: 'Describe this cat!',
 		licenceType: 'CC BY 2.0',
@@ -94,6 +104,7 @@ export const images = [
 		attributionUrl: 'https://www.flickr.com/people/29638108@N06/'
 	},
 	{
+        id: '',
 		image: cat11,
 		altText: 'Describe this cat!',
 		licenceType: 'CC BY-SA 2.0',
@@ -102,6 +113,7 @@ export const images = [
 		attributionUrl: 'https://www.flickr.com/people/4braham/'
 	},
 	{
+        id: '',
 		image: cat12,
 		altText: 'Describe this cat!',
 		licenceType: 'CC BY-SA 2.0',
@@ -110,8 +122,6 @@ export const images = [
 		attributionUrl: 'https://www.flickr.com/people/x-oph/'
 	}
 ];
-
-images.forEach((image : any) => image.id = undefined);
 
 const CatCard : React.FC<CatCardProps> = (props) => {
     // console.log('cat_card receiving props' + props)
@@ -130,11 +140,12 @@ const CatCard : React.FC<CatCardProps> = (props) => {
 export default CatCard;
 
 interface CatCardProps{
-    key: string | undefined;
+    key: number | undefined;
     name: string;
     species: string;
     favFoods: Array<string>;
     birthYear: number;
     catIndex: number;
+    image: { id: string; image: string; altText: string; licenceType: string; licenceUrl: string; attributionName: string; attributionUrl: string; } | undefined;
  }
  
