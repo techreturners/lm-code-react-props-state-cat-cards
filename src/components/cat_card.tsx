@@ -12,7 +12,7 @@ import cat11 from '../assets/images/cat11.jpg';
 import cat12 from '../assets/images/cat12.jpg';
 import CatImage from './cat_image';
 
-const images = [
+export const images = [
 	{
 		image: cat1,
 		altText: 'Describe this cat!',
@@ -111,6 +111,8 @@ const images = [
 	}
 ];
 
+images.forEach((image : any) => image.id = undefined);
+
 const CatCard : React.FC<CatCardProps> = (props) => {
     // console.log('cat_card receiving props' + props)
     return(
@@ -119,7 +121,7 @@ const CatCard : React.FC<CatCardProps> = (props) => {
             <p className="card__text">Species: {props.species}</p>
             <p className="card__text">Favourite Food(s): {props.favFoods.join()}</p>
             <p className="card__text">Birth Year: {props.birthYear}</p>
-            <CatImage {...images[props.catIndex]} />
+            {images[props.catIndex] && <CatImage {...images[props.catIndex]} />}
         </div>
     )
 
@@ -128,6 +130,7 @@ const CatCard : React.FC<CatCardProps> = (props) => {
 export default CatCard;
 
 interface CatCardProps{
+    key: string | undefined;
     name: string;
     species: string;
     favFoods: Array<string>;

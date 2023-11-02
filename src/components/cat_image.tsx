@@ -1,5 +1,5 @@
-// cat_image.tsx
 interface CatImageProps {
+    id?: string | undefined;
 	image: string;
 	altText: string;
 	licenceType: string;
