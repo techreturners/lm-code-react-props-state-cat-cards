@@ -17,7 +17,7 @@ function App(): JSX.Element {
 		if (images.length > index) images[index].id = id;
 	})
 
-	const [ cats, setCats ] = useState<Array<Cat>>(catData);
+	const [ cats ] = useState<Array<Cat>>(catData);
 
 	 console.log("Our pretties 😻: ", cats)
 
@@ -27,17 +27,19 @@ function App(): JSX.Element {
 		<Header count = {cats.length} />
 
 		<main>
-			<div>{cats.map((cat, index) => (
-				<CatCard
-				key = {index}
-				name = {cat.name}
-				species = {cat.species}
-				favFoods = {cat.favFoods}
-				birthYear = {cat.birthYear}
-				catIndex = {index}
-				image = {images.find(image => image.id === cat.id)}
-				/>
-			))}</div>
+			<div className='cards__wrapper'>{
+				<div>{cats.map((cat, index) => (
+					<CatCard
+					key = {index}
+					name = {cat.name}
+					species = {cat.species}
+					favFoods = {cat.favFoods}
+					birthYear = {cat.birthYear}
+					catIndex = {index}
+					image = {images.find(image => image.id === cat.id)}
+					/>
+				))}</div>
+			}</div>
 		</main>
 
 		<Footer />
